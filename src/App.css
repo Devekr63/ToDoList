@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  /* border: 2px solid black; */
+  height: 100vh;
 }
 
 .App-logo {

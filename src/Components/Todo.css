@@ -1,7 +1,23 @@
+*, *::after, *::before{
+    padding: 0;
+}
+
 #list--container{
-    border: 2px solid red;
+    border: 2px solid rgb(113, 23, 197);
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: none;
+}
+
+#list--items{
+    text-align: center;
+    list-style: none;
+}
+
+#list--data{
+    /* border: 2px solid black;  */
+    display: grid;
 }

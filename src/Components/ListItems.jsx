@@ -5,9 +5,11 @@ function ListItems(props) {
     const [listItem, setListItem] = useState(props.item)
 
     return (
-        <div>
-            {listItem}
-        </div>
+            <>
+                {listItem}
+                <button>Edit</button>
+                <button>Remove</button>
+            </>
     )
 }
 
