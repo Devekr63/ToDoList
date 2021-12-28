@@ -2,13 +2,10 @@ import React, { useState } from 'react'
 
 function ListItems(props) {
 
-    const [listItem, setListItem] = useState(props.item)
-
     return (
             <>
-                {listItem}
-                <button>Edit</button>
-                <button>Remove</button>
+                <button onClick={() => {props.edit("edited" ,props.idx)}}>edit</button>
+                <button onClick={() => {props.remove(props.idx)}}>Remove</button>
             </>
     )
 }
