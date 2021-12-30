@@ -6,20 +6,22 @@ function Todo () {
 
     const [listItems, setListItems] = useState([])
     const [newItem, setNewItem] = useState("")
+    const [input, setInput] = useState("")
 
     function newItemHandler(e) {
         setNewItem(e.target.value)
+        setInput(e.target.value)
     }
 
     function addItemToList(){
-        if(newItem !== ""){
+        if(newItem){
             setListItems(
                 [
                     ...listItems, newItem
                 ]
             )
-            document.getElementById("textArea").value = ""
             setNewItem("")
+            setInput("")
         }
     }
 
@@ -47,7 +49,7 @@ function Todo () {
         <div id='list--container' >
             <ul id='list--data'>
                 {listItems.map((item,index) => {
-                    return (<li id='list--items' key={index+item}>
+                    return (<li id='list--items' className='list' key={index+item}>
                         {item}
                         <ListItems 
                             idx={index}
@@ -58,8 +60,8 @@ function Todo () {
                     </li>
                 )})}
             </ul>
-            <textarea id='textArea' placeholder='Enter items' onChange={(e) => newItemHandler(e)}></textarea>
-            <button onClick={addItemToList}>Add to List</button>
+            <textarea id='task' placeholder='Enter items' onChange={(e) => newItemHandler(e)} value={input}></textarea>
+            <button id='btn'  onClick={addItemToList}>Add to List</button>
         </div>
     )
 }
